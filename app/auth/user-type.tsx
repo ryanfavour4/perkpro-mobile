@@ -20,37 +20,44 @@ export default function UserType() {
                     />
 
                     <View className="w-full mt-28 flex flex-col gap-5">
-                        <View className="rounded-lg overflow-hidden bg-primary-100 flex-row justify-between items-center">
-                            <View className="flex text-center mx-auto flex-row items-center justify-center p-6">
-                                <Text className="text-light-100 text-xl">
-                                    Login As Tenant
-                                </Text>
+                        <Link href={"/auth/login"} className="w-full flex-row">
+                            <View className="rounded-lg overflow-hidden bg-primary-100 flex-row justify-between items-center w-full">
+                                <View className="flex text-center mx-auto flex-row items-center justify-center p-6">
+                                    <Text className="text-light-100 text-xl">
+                                        Login As Tenant
+                                    </Text>
+                                </View>
+                                <View className="w-20 flex items-center text-center bg-dark-100 p-6 rounded-lg">
+                                    <Ionicons
+                                        name="chevron-forward"
+                                        size={24}
+                                        className="text-light-100"
+                                        color={colors["light-100"]}
+                                    />
+                                </View>
                             </View>
-                            <View className="w-20 flex items-center text-center bg-dark-100 p-6 rounded-lg">
-                                <Ionicons
-                                    name="chevron-forward"
-                                    size={24}
-                                    className="text-light-100"
-                                    color={colors["light-100"]}
-                                />
-                            </View>
-                        </View>
+                        </Link>
                         {/*  */}
-                        <View className="rounded-lg overflow-hidden bg-dark-100 flex-row justify-between items-center">
-                            <View className="flex text-center mx-auto flex-row items-center justify-center p-6">
-                                <Text className="text-light-100 text-xl">
-                                    Login As Tenant
-                                </Text>
+                        <Link
+                            href={"/auth/login-landlord"}
+                            className="w-full flex-row"
+                        >
+                            <View className="w-full rounded-lg overflow-hidden bg-dark-100 flex-row justify-between items-center">
+                                <View className="flex text-center mx-auto flex-row items-center justify-center p-6">
+                                    <Text className="text-light-100 text-xl">
+                                        Login as Landlord/Agent
+                                    </Text>
+                                </View>
+                                <View className="w-20 flex items-center text-center bg-primary-100 p-6 rounded-lg">
+                                    <Ionicons
+                                        name="chevron-forward"
+                                        size={24}
+                                        className="text-light-100"
+                                        color={colors["light-100"]}
+                                    />
+                                </View>
                             </View>
-                            <View className="w-20 flex items-center text-center bg-primary-100 p-6 rounded-lg">
-                                <Ionicons
-                                    name="chevron-forward"
-                                    size={24}
-                                    className="text-light-100"
-                                    color={colors["light-100"]}
-                                />
-                            </View>
-                        </View>
+                        </Link>
                         {/* -- */}
                         <View className="mt-4">
                             <Text className="text-xl mb-1">
@@ -58,7 +65,7 @@ export default function UserType() {
                             </Text>
                             <Link
                                 className="text-xl text-primary-100"
-                                href={"/"}
+                                href={"/auth/register"}
                             >
                                 Register Here
                             </Link>
@@ -69,5 +76,3 @@ export default function UserType() {
         </SafeAreaView>
     );
 }
-
-const styles = StyleSheet.create({});

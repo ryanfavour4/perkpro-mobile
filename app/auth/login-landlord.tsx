@@ -8,7 +8,7 @@ import { useTheme } from "@/contexts/theme";
 import PasswordInput from "@/components/inputs/password";
 import Button from "@/components/buttons/button";
 
-export default function Login() {
+export default function LoginLandlord() {
     const { colors } = useTheme();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -37,7 +37,6 @@ export default function Login() {
                                         placeholder={"Email address"}
                                         className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
                                         value={email}
-                                        keyboardType="email-address"
                                         onChangeText={setEmail}
                                         secureTextEntry={false}
                                     />
@@ -60,7 +59,7 @@ export default function Login() {
                                     secureTextEntry={false}
                                 />
                             </View>
-                            <Button title="Login" className="mt-8" />
+                            <Button title="Submit" className="mt-8" />
                         </View>
                         {/* -- */}
                         <Text className="text-xl mb-6">
@@ -80,7 +79,7 @@ export default function Login() {
                             </Text>
                             <Link
                                 className="text-xl text-primary-100"
-                                href={"/auth/register"}
+                                href={"/"}
                             >
                                 Register Here
                             </Link>
