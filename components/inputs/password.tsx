@@ -11,6 +11,7 @@ import { useTheme } from "@/contexts/theme";
 
 interface PasswordInputProps extends TextInputProps {
     value: string;
+    className?: string;
     onChangeText: (password: string) => void;
     placeholder?: string;
 }
@@ -18,6 +19,7 @@ interface PasswordInputProps extends TextInputProps {
 export default function PasswordInput({
     value,
     onChangeText,
+    className,
     placeholder = "Password",
     ...rest
 }: PasswordInputProps) {
@@ -25,7 +27,9 @@ export default function PasswordInput({
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <View className="border border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+        <View
+            className={`border border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3 ${className}`}
+        >
             <TextInput
                 placeholder={placeholder}
                 className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"

@@ -28,7 +28,7 @@ export default function Login() {
                     <View className="w-full mt-16 flex flex-col gap-5">
                         <View className="">
                             <View className="mb-4 w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                                <Text className="text-base mb-1 text-dark-100">
                                     Email{" "}
                                 </Text>
 
@@ -49,7 +49,7 @@ export default function Login() {
                                 </View>
                             </View>
                             <View className="w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                                <Text className="text-base mb-1 text-dark-100">
                                     Password
                                 </Text>
 
@@ -63,11 +63,11 @@ export default function Login() {
                             <Button title="Login" className="mt-8" />
                         </View>
                         {/* -- */}
-                        <Text className="text-xl mb-6">
+                        <Text className="mb-6">
                             Forgot Password?{" "}
                             <Link
-                                className="text-xl text-primary-100"
-                                href={"/"}
+                                className="text-primary-100"
+                                href={"/auth/forgot-password"}
                             >
                                 Click Here
                             </Link>
@@ -75,11 +75,11 @@ export default function Login() {
 
                         {/* -- */}
                         <View className="mt-4">
-                            <Text className="text-xl mb-1">
+                            <Text className="mb-1">
                                 Don’t have an account with us yet?
                             </Text>
                             <Link
-                                className="text-xl text-primary-100"
+                                className="text-primary-100"
                                 href={"/auth/register"}
                             >
                                 Register Here

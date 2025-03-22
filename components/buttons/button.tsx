@@ -58,7 +58,7 @@ export default function Button({
                 <View className="flex flex-row items-center gap-2">
                     {icon && <View>{icon}</View>}
                     <Text
-                        className={`text-lg font-semibold ${
+                        className={`font-semibold ${
                             variant === "solid"
                                 ? "text-light-100"
                                 : "text-primary-100"

@@ -60,11 +60,11 @@ export default function UserType() {
                         </Link>
                         {/* -- */}
                         <View className="mt-4">
-                            <Text className="text-xl mb-1">
+                            <Text className="mb-1">
                                 Don’t have an account with us yet?
                             </Text>
                             <Link
-                                className="text-xl text-primary-100"
+                                className="text-primary-100"
                                 href={"/auth/register"}
                             >
                                 Register Here

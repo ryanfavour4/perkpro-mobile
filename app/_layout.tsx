@@ -1,7 +1,6 @@
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 import "react-native-reanimated";
 import { ThemeProvider } from "@/contexts/theme";
@@ -64,9 +63,12 @@ export default function RootLayout() {
                             name="auth"
                             options={{ headerShown: false }}
                         />
+                        <Stack.Screen
+                            name="index"
+                            options={{ headerShown: false }}
+                        />
                         <Stack.Screen name="+not-found" />
                     </Stack>
-                    <StatusBar style="auto" />
                 </>
             </ThemeProvider>
         </>

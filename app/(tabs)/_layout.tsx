@@ -49,7 +49,7 @@ export default function TabLayout() {
                             size={size}
                             color={color}
                         />
-                    ), // Regular icon
+                    ),
                 }}
             />
         </Tabs>

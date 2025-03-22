@@ -32,7 +32,7 @@ export default function Register() {
                     <View className="w-full mt-16 flex flex-col gap-5">
                         <View className="">
                             <View className="mb-4 w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                                <Text className="text-base mb-1 text-dark-100">
                                     First Name{" "}
                                 </Text>
 
@@ -52,7 +52,7 @@ export default function Register() {
                             </View>
                             {/*  */}
                             <View className="mb-4 w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                                <Text className="text-base mb-1 text-dark-100">
                                     Last Name{" "}
                                 </Text>
 
@@ -72,7 +72,7 @@ export default function Register() {
                             </View>
                             {/*  */}
                             <View className="mb-4 w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                                <Text className="text-base mb-1 text-dark-100">
                                     Email{" "}
                                 </Text>
 
@@ -94,7 +94,7 @@ export default function Register() {
                             </View>
                             {/*  */}
                             <View className="mb-4 w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                                <Text className="text-base mb-1 text-dark-100">
                                     Phone/Whatsapp{" "}
                                 </Text>
 
@@ -114,8 +114,8 @@ export default function Register() {
                                 </View>
                             </View>
                             {/*  */}
-                            <View className="w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                            <View className="w-full mb-4">
+                                <Text className="text-base mb-1 text-dark-100">
                                     Password
                                 </Text>
 
@@ -128,7 +128,7 @@ export default function Register() {
                             </View>
                             {/*  */}
                             <View className="w-full">
-                                <Text className="text-base mb-1 text-gray-700">
+                                <Text className="text-base mb-1 text-dark-100">
                                     Confirm Password
                                 </Text>
 
@@ -144,16 +144,16 @@ export default function Register() {
                         {/* -- */}
 
                         {/* -- */}
-                        <View className="mt-4 pb-16">
-                            <Text className="text-xl mb-1">
-                                Already have an account with us?
+                        <View className="mt-4 pb-16 flex items-center flex-row gap-2 justify-center">
+                            <Text className="mb-6">
+                                Already have an account with us?{" "}
+                                <Link
+                                    className="text-primary-100 ml-2"
+                                    href={"/auth/user-type"}
+                                >
+                                    Login
+                                </Link>
                             </Text>
-                            <Link
-                                className="text-xl text-primary-100"
-                                href={"/auth/user-type"}
-                            >
-                                Login
-                            </Link>
                         </View>
                     </View>
                 </View>
