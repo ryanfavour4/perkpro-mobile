@@ -1,12 +1,12 @@
 {
     "expo": {
-        "name": "perkpro-mobile",
+        "name": "Perkpro",
         "slug": "perkpro",
         "version": "1.0.0",
         "orientation": "portrait",
         "icon": "./assets/images/icon.png",
         "splash": {
-            "image": "./assets/images/logo-dark.png",
+            "image": "./assets/images/icon.png",
             "resizeMode": "contain",
             "backgroundColor": "#ffffff"
         },
@@ -14,9 +14,16 @@
         "userInterfaceStyle": "automatic",
         "newArchEnabled": true,
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": true,
+            "infoPlist": {
+                "NSAppTransportSecurity": {
+                    "NSAllowsArbitraryLoads": true
+                }
+            }
         },
         "android": {
+            "package": "pkg.perkpro.app",
+            "versionCode": 1,
             "adaptiveIcon": {
                 "foregroundImage": "./assets/images/logo-dark.png",
                 "backgroundColor": "#ffffff"
@@ -33,7 +40,7 @@
                 "expo-splash-screen",
                 {
                     "image": "./assets/images/logo-dark.png",
-                    "imageWidth": 200,
+                    "imageWidth": 350,
                     "resizeMode": "contain",
                     "backgroundColor": "#ffffff"
                 }
@@ -41,6 +48,14 @@
         ],
         "experiments": {
             "typedRoutes": true
+        },
+        "extra": {
+            "router": {
+                "origin": false
+            },
+            "eas": {
+                "projectId": "967e3526-8924-423b-ab48-350fc4739bbb"
+            }
         }
     }
 }

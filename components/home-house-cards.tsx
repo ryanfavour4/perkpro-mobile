@@ -6,7 +6,33 @@ import { useRouter } from "expo-router";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "@/contexts/theme";
 
-export default function HomeHouseCards() {
+type props = {
+    image?: string;
+    title?: string;
+    price?: string;
+    location?: string;
+    specs?: string;
+    parking?: string;
+    garden?: string;
+    security?: string;
+    electricity?: string;
+    date?: string;
+    link?: string;
+};
+
+export default function HomeHouseCards({
+    specs,
+    date,
+    electricity,
+    garden,
+    image,
+    location,
+    parking,
+    price,
+    security,
+    title,
+    link,
+}: props) {
     const { colors } = useTheme();
     const router = useRouter();
 
@@ -15,16 +41,16 @@ export default function HomeHouseCards() {
             <View className="relative">
                 <Image
                     className="rounded-lg h-36 w-full"
-                    source={images.listingHouse1}
+                    source={image || images.listingHouse1}
                 />
                 <Text className="text-sm py-px rounded-full w-fit px-4 bg-light-100 absolute top-1 right-1">
                     2 hours ago
                 </Text>
             </View>
             <View className="p-1.5 mt-1.5 flex flex-col gap-3">
-                <Text className="font-semibold">Ikoyi, Leki</Text>
+                <Text className="font-semibold">{title || "Ikoyi, Leki"}</Text>
                 <Text className="text-lg font-semibold">
-                    2 Bedroom bungalow
+                    {specs || "2 Bedroom bungalow"}
                 </Text>
                 <View className="flex flex-row gap-3 items-center">
                     <MaterialCommunityIcons
@@ -52,7 +78,12 @@ export default function HomeHouseCards() {
                     />
                 </View>
                 <Button
-                    onPress={() => router.push("/auth/login")}
+                    onPress={() =>
+                        router.push(
+                            (link as any) ||
+                                "property/single-rent-property-details"
+                        )
+                    }
                     title="Inspect Property"
                 />
             </View>

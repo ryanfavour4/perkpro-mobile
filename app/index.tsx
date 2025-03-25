@@ -61,7 +61,7 @@ export default function HomeScreen() {
                         </ScrollView>
                     </View>
 
-                    {/* Slide 1 */}
+                    {/* Slide 2 */}
                     <View className="mt-10">
                         <View className="border-b-2 border-dark-50 mb-5">
                             <View className="px-6 bg-dark-50 w-2/3 py-2 rounded-t-xl">
@@ -75,15 +75,15 @@ export default function HomeScreen() {
                             showsHorizontalScrollIndicator={false}
                             className="flex flex-row gap-4"
                         >
-                            <HomeHouseCards />
-                            <HomeHouseCards />
-                            <HomeHouseCards />
-                            <HomeHouseCards />
-                            <HomeHouseCards />
+                            <HomeHouseCards link="property/single-sale-property-details" />
+                            <HomeHouseCards link="property/single-sale-property-details" />
+                            <HomeHouseCards link="property/single-sale-property-details" />
+                            <HomeHouseCards link="property/single-sale-property-details" />
+                            <HomeHouseCards link="property/single-sale-property-details" />
                         </ScrollView>
                     </View>
 
-                    {/* Slide 1 */}
+                    {/* Slide 3 */}
                     <View className="mt-10">
                         <View className="border-b-2 border-dark-50 mb-5">
                             <View className="px-6 bg-dark-50 w-2/3 py-2 rounded-t-xl">
@@ -105,7 +105,7 @@ export default function HomeScreen() {
                         </ScrollView>
                     </View>
 
-                    {/* Slide 1 */}
+                    {/* Slide 4 */}
                     <View className="mt-10">
                         <View className="border-b-2 border-dark-50 mb-5">
                             <View className="px-6 bg-dark-50 w-2/3 py-2 rounded-t-xl">

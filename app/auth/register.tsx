@@ -2,7 +2,7 @@ import { Image, ScrollView, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
 import { images } from "@/constants/images";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTheme } from "@/contexts/theme";
 import PasswordInput from "@/components/inputs/password";
@@ -10,6 +10,7 @@ import Button from "@/components/buttons/button";
 
 export default function Register() {
     const { colors } = useTheme();
+    const router = useRouter();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
@@ -22,6 +23,7 @@ export default function Register() {
             <ScrollView className="px-4">
                 <View className="flex flex-col gap-5 items-center h-full pt-4">
                     <Image
+                        onProgress={() => router.push("/")}
                         resizeMode="contain"
                         className="w-32 h-32"
                         source={images.logo}

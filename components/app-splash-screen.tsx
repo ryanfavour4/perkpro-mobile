@@ -27,9 +27,6 @@ export default function AppSplashScreen({
                     className=""
                     source={images.logo}
                 />
-                <Text className="text-2xl text-primary-100 font-bold text-center mb-8">
-                    Perk Pro
-                </Text>
                 {loading && (
                     <ActivityIndicator size="large" color={colors.primary} />
                 )}

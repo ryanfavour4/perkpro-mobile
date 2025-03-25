@@ -31,7 +31,7 @@ export default function RootLayout() {
     useEffect(() => {
         async function loadAssets() {
             try {
-                await new Promise((resolve) => setTimeout(resolve, 3000)); // Simulate loading for 3 seconds
+                await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate loading for 2 seconds
             } catch (error) {
                 console.warn(error);
             } finally {
@@ -65,6 +65,18 @@ export default function RootLayout() {
                         />
                         <Stack.Screen
                             name="index"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="property/single-rent-property-details"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="property/single-sale-property-details"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="property/pay-property"
                             options={{ headerShown: false }}
                         />
                         <Stack.Screen name="+not-found" />

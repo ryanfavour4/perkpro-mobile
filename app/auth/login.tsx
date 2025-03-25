@@ -2,13 +2,14 @@ import { Image, ScrollView, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
 import { images } from "@/constants/images";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTheme } from "@/contexts/theme";
 import PasswordInput from "@/components/inputs/password";
 import Button from "@/components/buttons/button";
 
 export default function Login() {
+    const router = useRouter();
     const { colors } = useTheme();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,8 +19,9 @@ export default function Login() {
             <ScrollView className="px-4">
                 <View className="flex flex-col gap-5 items-center h-full pt-4">
                     <Image
+                        onProgress={() => router.push}
                         resizeMode="contain"
-                        className="w-32 h-32"
+                        className="w-32 h-32 border-4"
                         source={images.logo}
                     />
 
