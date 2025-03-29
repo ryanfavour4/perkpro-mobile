@@ -1,11 +1,7 @@
-import Button from "@/components/buttons/button";
-import { MapComponent } from "@/components/map-component";
 import { images } from "@/constants/images";
 import { useTheme } from "@/contexts/theme";
 import HeaderTopNavbar from "@/layouts/header-top-navbar";
-import TopNavbar from "@/layouts/top-navbar";
-import { AntDesign } from "@expo/vector-icons";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, View, Text, Image, Pressable } from "react-native";
 
