@@ -79,6 +79,18 @@ export default function RootLayout() {
                             name="property/pay-property"
                             options={{ headerShown: false }}
                         />
+                        <Stack.Screen
+                            name="search/search"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="search/companies"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="search/results"
+                            options={{ headerShown: false }}
+                        />
                         <Stack.Screen name="+not-found" />
                     </Stack>
                 </>

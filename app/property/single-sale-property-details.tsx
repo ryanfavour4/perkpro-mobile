@@ -44,7 +44,6 @@ export default function SingleRentPropertyDetailsScreen() {
                                 <Text className="my-1.5 text-right text-2xl font-semibold">
                                     ₦150k
                                 </Text>
-                                <Text className="text-right">Per Night</Text>
                             </View>
                         </View>
                         <View className="border-2 w-[60%] border-dark-50/25 rounded-full mb-4" />

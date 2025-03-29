@@ -1,11 +1,13 @@
 import HomeHouseCards from "@/components/home-house-cards";
 import { images } from "@/constants/images";
 import TopNavbar from "@/layouts/top-navbar";
+import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 
 export default function HomeScreen() {
+    const router = useRouter();
     return (
         <>
             <StatusBar style="dark" />
@@ -164,7 +166,10 @@ export default function HomeScreen() {
                             </View>
                         </ScrollView>
 
-                        <Pressable className="bg-dark-50 p-3 rounded-lg mt-5">
+                        <Pressable
+                            onPress={() => router.push("/search/companies")}
+                            className="bg-dark-50 p-3 rounded-lg mt-5"
+                        >
                             <Text className="text-light-100 text-center">
                                 Search For more Companies/Agents
                             </Text>

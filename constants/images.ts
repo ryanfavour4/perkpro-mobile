@@ -12,6 +12,7 @@ import demoHouse1 from "@/assets/images/demo-house-1.jpg";
 import demoHouse2 from "@/assets/images/demo-house-2.jpg";
 import listingHouse1 from "@/assets/images/listing-house-1.jpg";
 import listingHouse2 from "@/assets/images/listing-house-2.png";
+import nothingFoundGif from "@/assets/images/nothing-found.gif";
 
 export const images = {
     logo,
@@ -28,4 +29,5 @@ export const images = {
     demoHouse2,
     listingHouse1,
     listingHouse2,
+    nothingFoundGif,
 };

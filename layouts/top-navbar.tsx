@@ -39,49 +39,49 @@ export default function TopNavbar() {
     const [navLink, setNavLink] = useState<NavLink[]>([
         {
             name: "Profile",
-            link: "/auth/login",
+            link: "/auth/kyc",
             iconLibrary: "Feather",
             iconName: "user",
             isActive: true,
         },
         {
             name: "Wishlist",
-            link: "/",
+            link: "/auth/login",
             iconLibrary: "Feather",
             iconName: "heart",
             isActive: false,
         },
         {
             name: "Schedules",
-            link: "/",
+            link: "/auth/login",
             iconLibrary: "AntDesign",
             iconName: "calendar",
             isActive: false,
         },
         {
             name: "Rent Financing",
-            link: "/",
+            link: "/auth/login",
             iconLibrary: "Feather",
             iconName: "trending-up",
             isActive: false,
         },
         {
             name: "Search Companies",
-            link: "/",
+            link: "/auth/login",
             iconLibrary: "MaterialCommunityIcons",
             iconName: "home-search-outline",
             isActive: false,
         },
         {
             name: "Notification",
-            link: "/",
+            link: "/auth/login",
             iconLibrary: "Feather",
             iconName: "bell",
             isActive: false,
         },
         {
             name: "Chats",
-            link: "/",
+            link: "/auth/login",
             iconLibrary: "Ionicons",
             iconName: "chatbubbles-outline",
             isActive: false,
@@ -118,19 +118,23 @@ export default function TopNavbar() {
                             alt="Image"
                         />
 
-                        <Image
-                            resizeMode="contain"
-                            className="w-32 h-16 ml-14"
-                            source={images.logo}
-                        />
+                        <Link className="ml-14" href={"/"}>
+                            <Image
+                                resizeMode="contain"
+                                className="w-32 h-16"
+                                source={images.logo}
+                            />
+                        </Link>
 
                         <View className="flex flex-row items-center gap-5">
-                            <Fontisto
-                                className="rounded-lg p-2"
-                                name="search"
-                                size={24}
-                                color={colors.text}
-                            />
+                            <Link href={"/search/search"}>
+                                <Fontisto
+                                    className="rounded-lg p-2"
+                                    name="search"
+                                    size={24}
+                                    color={colors.text}
+                                />
+                            </Link>
                             <Feather
                                 onPress={() => setIsMenuOpen(!isMenuOpen)}
                                 className="rounded-lg p-2"
