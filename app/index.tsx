@@ -8,6 +8,7 @@ import { Image, Pressable, ScrollView, Text, View } from "react-native";
 
 export default function HomeScreen() {
     const router = useRouter();
+
     return (
         <>
             <StatusBar style="dark" />
