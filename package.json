@@ -5,6 +5,11 @@
     "scripts": {
         "start": "expo start -c",
         "reset-project": "node ./scripts/reset-project.js",
+        "start:dev": "expo start --dev-client",
+        "build:apk": "eas build -p android --profile production --output-format apk",
+        "build": "eas build --profile preview --platform android",
+        "android:run": "expo run:android",
+        "ios:run": "expo run:ios",
         "android": "expo start --android",
         "ios": "expo start --ios",
         "web": "expo start --web",
@@ -59,3 +64,4 @@
     },
     "private": true
 }
+
