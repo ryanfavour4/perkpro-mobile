@@ -1,4 +1,5 @@
 import Button from "@/components/buttons/button";
+import { MapComponent } from "@/components/map-component";
 import { images } from "@/constants/images";
 import { useTheme } from "@/contexts/theme";
 import TopNavbar from "@/layouts/top-navbar";
@@ -84,7 +85,7 @@ export default function SingleRentPropertyDetailsScreen() {
                                     Map:
                                 </Text>
                                 <View className="mr-3.5 border-2 border-primary-100 rounded-md overflow-hidden h-36">
-                                    {/* map goes here */}
+                                    <MapComponent />
                                 </View>
                             </View>
                         </View>
