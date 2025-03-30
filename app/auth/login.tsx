@@ -1,4 +1,11 @@
-import { Image, ScrollView, Text, TextInput, View } from "react-native";
+import {
+    Image,
+    ScrollView,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
+} from "react-native";
 import React, { useState } from "react";
 import { images } from "@/constants/images";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
@@ -18,12 +25,13 @@ export default function Login() {
         <SafeAreaView>
             <ScrollView className="px-4">
                 <View className="flex flex-col gap-5 items-center h-full pt-4">
-                    <Image
-                        onProgress={() => router.push}
-                        resizeMode="contain"
-                        className="w-32 h-32 border-4"
-                        source={images.logo}
-                    />
+                    <TouchableOpacity onPress={() => router.push("/")}>
+                        <Image
+                            resizeMode="contain"
+                            className="w-32 h-32"
+                            source={images.logo}
+                        />
+                    </TouchableOpacity>
 
                     <Text className="text-xl font-bold">Login</Text>
 

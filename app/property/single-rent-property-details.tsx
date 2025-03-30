@@ -6,7 +6,6 @@ import { AntDesign } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, View, Text, Image, Pressable } from "react-native";
-import MapView, { PROVIDER_DEFAULT } from "react-native-maps";
 
 export default function SingleRentPropertyDetailsScreen() {
     const { colors } = useTheme();
@@ -85,7 +84,7 @@ export default function SingleRentPropertyDetailsScreen() {
                                     Map:
                                 </Text>
                                 <View className="mr-3.5 border-2 border-primary-100 rounded-md overflow-hidden h-36">
-                                    <MapComponent />
+                                    {/* map goes here */}
                                 </View>
                             </View>
                         </View>
@@ -186,24 +185,5 @@ export default function SingleRentPropertyDetailsScreen() {
                 </View>
             </ScrollView>
         </>
-    );
-}
-
-export function MapComponent() {
-    return (
-        <View
-            style={{ flex: 1, width: "100%", height: "100%", minHeight: 400 }}
-        >
-            <MapView
-                provider={PROVIDER_DEFAULT}
-                style={{ width: "100%", height: "100%" }}
-                region={{
-                    latitude: 6.5244, // Example: Lagos
-                    longitude: 3.3792,
-                    latitudeDelta: 0.05,
-                    longitudeDelta: 0.05,
-                }}
-            />
-        </View>
     );
 }

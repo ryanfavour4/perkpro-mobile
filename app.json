@@ -2,11 +2,11 @@
     "expo": {
         "name": "Perkpro",
         "slug": "perkpro",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "orientation": "portrait",
-        "icon": "./assets/images/app-icon.jpg",
+        "icon": "./assets/images/app-icon.png",
         "splash": {
-            "image": "./assets/images/app-icon.jpg",
+            "image": "./assets/images/app-icon.png",
             "resizeMode": "contain",
             "backgroundColor": "#ffffff"
         },
@@ -23,23 +23,24 @@
         },
         "android": {
             "package": "pkg.perkpro.app",
+            "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
             "versionCode": 1,
             "adaptiveIcon": {
-                "foregroundImage": "./assets/images/app-icon.jpg",
+                "foregroundImage": "./assets/images/app-icon.png",
                 "backgroundColor": "#ffffff"
             }
         },
         "web": {
             "bundler": "metro",
             "output": "static",
-            "favicon": "./assets/images/app-icon.jpg"
+            "favicon": "./assets/images/app-icon.png"
         },
         "plugins": [
             "expo-router",
             [
                 "expo-splash-screen",
                 {
-                    "image": "./assets/images/app-icon.jpg",
+                    "image": "./assets/images/app-icon.png",
                     "imageWidth": 350,
                     "resizeMode": "contain",
                     "backgroundColor": "#ffffff"
