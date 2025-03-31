@@ -53,47 +53,61 @@ export default function RootLayout() {
     return (
         <>
             <ThemeProvider>
-                <>
-                    <Stack>
-                        <Stack.Screen
-                            name="(tabs)"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="auth"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="index"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="property/single-rent-property-details"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="property/single-sale-property-details"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="property/pay-property"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="search/search"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="search/companies"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen
-                            name="search/results"
-                            options={{ headerShown: false }}
-                        />
-                        <Stack.Screen name="+not-found" />
-                    </Stack>
-                </>
+                <Stack>
+                    <Stack.Screen
+                        name="(tabs)"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="auth"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="index"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="chat/chat-list"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="notifications/notifications"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="property/single-rent-property-details"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="property/single-sale-property-details"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="property/pay-property"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="schedules/schedules"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="search/search"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="search/companies"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="search/results"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="wishlist/wishlist"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen name="+not-found" />
+                </Stack>
             </ThemeProvider>
         </>
     );

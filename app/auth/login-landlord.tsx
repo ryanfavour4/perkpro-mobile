@@ -71,7 +71,10 @@ export default function LoginLandlord() {
                             {/* -- */}
                             <Text className="mb-6 text-light-100">
                                 Forgot Password?{" "}
-                                <Link className="text-secondary-100" href={"/"}>
+                                <Link
+                                    className="text-secondary-100"
+                                    href={"/auth/forgot-password"}
+                                >
                                     Click Here
                                 </Link>
                             </Text>

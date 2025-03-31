@@ -22,10 +22,10 @@ export function MapComponent() {
     <body>
       <div id="map" style="width:100%; height:100%; min-height:120px; flex:1;"></div>
           <script>
-          var map = L.map('map').setView([6.5244, 3.3792], 13);
+          var map = L.map('map').setView([6.5244, 3.3792], 10);
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
           var marker = L.marker([6.5244, 3.3792]).addTo(map);
-          marker.bindPopup("<b>Hello Lagos!</b><br>This is a marker.").openPopup();
+          marker.bindPopup("Property Location").openPopup();
         </script>
     </body>
     </html>

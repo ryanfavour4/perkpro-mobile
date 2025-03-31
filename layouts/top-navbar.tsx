@@ -11,8 +11,9 @@ import {
 import { useTheme } from "@/contexts/theme";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { menuLinks } from "@/constants/menu";
 
-type NavLink = {
+export type NavLink = {
     name: string;
     link: any;
     iconName: any;
@@ -36,57 +37,7 @@ const iconMap = {
 export default function TopNavbar() {
     const { colors } = useTheme();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [navLink, setNavLink] = useState<NavLink[]>([
-        {
-            name: "Profile",
-            link: "/auth/kyc",
-            iconLibrary: "Feather",
-            iconName: "user",
-            isActive: true,
-        },
-        {
-            name: "Wishlist",
-            link: "/auth/login",
-            iconLibrary: "Feather",
-            iconName: "heart",
-            isActive: false,
-        },
-        {
-            name: "Schedules",
-            link: "/auth/login",
-            iconLibrary: "AntDesign",
-            iconName: "calendar",
-            isActive: false,
-        },
-        {
-            name: "Rent Financing",
-            link: "/auth/login",
-            iconLibrary: "Feather",
-            iconName: "trending-up",
-            isActive: false,
-        },
-        {
-            name: "Search Companies",
-            link: "/auth/login",
-            iconLibrary: "MaterialCommunityIcons",
-            iconName: "home-search-outline",
-            isActive: false,
-        },
-        {
-            name: "Notification",
-            link: "/auth/login",
-            iconLibrary: "Feather",
-            iconName: "bell",
-            isActive: false,
-        },
-        {
-            name: "Chats",
-            link: "/auth/login",
-            iconLibrary: "Ionicons",
-            iconName: "chatbubbles-outline",
-            isActive: false,
-        },
-    ]);
+    const [navLink, setNavLink] = useState<NavLink[]>(menuLinks);
 
     const navLinkHandler = (link: string) => {
         console.log(link);
@@ -230,7 +181,7 @@ export default function TopNavbar() {
                         <View
                             className={`border-red-500 border rounded-lg hover:opacity-50 bg-red-500`}
                         >
-                            <Link href={"/auth/login"}>
+                            <Link href={"/auth/user-type"}>
                                 <View className="py-3.5 px-3 w-full flex flex-row items-center gap-4">
                                     <AntDesign
                                         name="logout"

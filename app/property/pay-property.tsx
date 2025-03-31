@@ -3,7 +3,7 @@ import { useTheme } from "@/contexts/theme";
 import HeaderTopNavbar from "@/layouts/header-top-navbar";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, View, Text, Image, Pressable } from "react-native";
+import { ScrollView, View, Text, Image } from "react-native";
 
 export default function PayProperty() {
     const { colors } = useTheme();

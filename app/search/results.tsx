@@ -1,6 +1,6 @@
 import TopNavbar from "@/layouts/top-navbar";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, View, Text, Image, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, Image } from "react-native";
 import HouseSearchResultCard from "./components/house-search-result-card";
 import { images } from "@/constants/images";
 

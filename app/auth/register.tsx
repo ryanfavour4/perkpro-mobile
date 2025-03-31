@@ -1,33 +1,49 @@
-import { Image, ScrollView, Text, TextInput, View } from "react-native";
+import {
+    Image,
+    ScrollView,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
+} from "react-native";
 import React, { useState } from "react";
 import { images } from "@/constants/images";
-import { Ionicons, AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { Link, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTheme } from "@/contexts/theme";
 import PasswordInput from "@/components/inputs/password";
 import Button from "@/components/buttons/button";
+import DropDownPicker from "react-native-dropdown-picker";
 
 export default function Register() {
     const { colors } = useTheme();
     const router = useRouter();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [accountType, setAccountType] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    const [open, setOpen] = useState(false);
+    const [typeList, setTypeList] = useState([
+        { label: "Landlord/Agent", value: "landlord-agent" },
+        { label: "Tenant/User", value: "tenant-user" },
+    ]);
+
     return (
         <SafeAreaView>
             <ScrollView className="px-4">
                 <View className="flex flex-col gap-5 items-center h-full pt-4">
-                    <Image
-                        onProgress={() => router.push("/")}
-                        resizeMode="contain"
-                        className="w-32 h-32"
-                        source={images.logo}
-                    />
+                    <TouchableOpacity onPress={() => router.push("/")}>
+                        <Image
+                            resizeMode="contain"
+                            className="w-32 h-32"
+                            source={images.logo}
+                        />
+                    </TouchableOpacity>
 
                     <Text className="text-xl font-bold">Register</Text>
 
@@ -114,6 +130,34 @@ export default function Register() {
                                         color={colors.text}
                                     />
                                 </View>
+                            </View>
+                            {/*  */}
+                            <View className="mb-4 w-full z-50">
+                                <Text className="text-base mb-1 text-dark-100">
+                                    Account Type
+                                </Text>
+
+                                <DropDownPicker
+                                    open={open}
+                                    setOpen={setOpen}
+                                    value={accountType}
+                                    setValue={setAccountType}
+                                    items={typeList}
+                                    setItems={setTypeList}
+                                    multiple={false}
+                                    placeholder="Select Account type"
+                                    onOpen={() => setOpen(true)}
+                                    style={{
+                                        paddingHorizontal: 16,
+                                        borderRadius: 8,
+                                        borderWidth: 1,
+                                        borderColor: "#ccc",
+                                    }}
+                                    dropDownContainerStyle={{
+                                        borderColor: "#ccc",
+                                        backgroundColor: "white",
+                                    }}
+                                />
                             </View>
                             {/*  */}
                             <View className="w-full mb-4">

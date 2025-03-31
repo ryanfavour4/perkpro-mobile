@@ -11,6 +11,7 @@ import {
 import { useTheme } from "@/contexts/theme";
 import { Link, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { menuLinks } from "@/constants/menu";
 
 type NavLink = {
     name: string;
@@ -41,57 +42,7 @@ export default function HeaderTopNavbar({ title }: props) {
     const router = useRouter();
     const { colors } = useTheme();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [navLink, setNavLink] = useState<NavLink[]>([
-        {
-            name: "Profile",
-            link: "/auth/login",
-            iconLibrary: "Feather",
-            iconName: "user",
-            isActive: true,
-        },
-        {
-            name: "Wishlist",
-            link: "/",
-            iconLibrary: "Feather",
-            iconName: "heart",
-            isActive: false,
-        },
-        {
-            name: "Schedules",
-            link: "/",
-            iconLibrary: "AntDesign",
-            iconName: "calendar",
-            isActive: false,
-        },
-        {
-            name: "Rent Financing",
-            link: "/",
-            iconLibrary: "Feather",
-            iconName: "trending-up",
-            isActive: false,
-        },
-        {
-            name: "Search Companies",
-            link: "/",
-            iconLibrary: "MaterialCommunityIcons",
-            iconName: "home-search-outline",
-            isActive: false,
-        },
-        {
-            name: "Notification",
-            link: "/",
-            iconLibrary: "Feather",
-            iconName: "bell",
-            isActive: false,
-        },
-        {
-            name: "Chats",
-            link: "/",
-            iconLibrary: "Ionicons",
-            iconName: "chatbubbles-outline",
-            isActive: false,
-        },
-    ]);
+    const [navLink, setNavLink] = useState<NavLink[]>(menuLinks);
 
     const navLinkHandler = (link: string) => {
         console.log(link);
@@ -221,7 +172,7 @@ export default function HeaderTopNavbar({ title }: props) {
                         <View
                             className={`border-red-500 border rounded-lg hover:opacity-50 bg-red-500`}
                         >
-                            <Link href={"/auth/login"}>
+                            <Link href={"/auth/user-type"}>
                                 <View className="py-3.5 px-3 w-full flex flex-row items-center gap-4">
                                     <AntDesign
                                         name="logout"
