@@ -25,7 +25,7 @@ export default function Login() {
         <SafeAreaView>
             <ScrollView className="px-4">
                 <View className="flex flex-col gap-5 items-center h-full pt-4">
-                    <TouchableOpacity onPress={() => router.push("/")}>
+                    <TouchableOpacity onPress={() => router.push("/home")}>
                         <Image
                             resizeMode="contain"
                             className="w-32 h-32"
@@ -86,7 +86,7 @@ export default function Login() {
                         {/* -- */}
                         <View className="mt-4">
                             <Text className="mb-1">
-                                Don’t have an account with us yet?
+                                Don't have an account with us yet?
                             </Text>
                             <Link
                                 className="text-primary-100"

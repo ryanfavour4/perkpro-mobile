@@ -11,7 +11,7 @@ export default function About() {
                     Hello About {Platform.OS}
                 </Text>
                 <Link href="/auth/login">Login with us</Link>
-                <Link href="/auth/user-type">Choose Account</Link>
+                <Link href="/">Choose Account</Link>
             </SafeAreaView>
         </View>
     );

@@ -82,7 +82,7 @@ export default function LoginLandlord() {
                             {/* -- */}
                             <View className="mt-4">
                                 <Text className="mb-1 text-light-100">
-                                    Don’t have an account with us yet?
+                                    Don't have an account with us yet?
                                 </Text>
                                 <Link
                                     className="text-secondary-100"

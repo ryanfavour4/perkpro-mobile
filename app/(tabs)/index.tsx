@@ -16,7 +16,7 @@ export default function HomeScreen() {
                 at! Est, non cupiditate.
             </Text>
             <Link href="/auth/login">Login with us</Link>
-            <Link href="/auth/user-type">Choose Account</Link>
+            <Link href="/">Choose Account</Link>
             <Button title="Click Me!" onPress={toggleTheme} />
         </>
     );

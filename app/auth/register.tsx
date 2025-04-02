@@ -195,7 +195,7 @@ export default function Register() {
                                 Already have an account with us?{" "}
                                 <Link
                                     className="text-primary-100 ml-2"
-                                    href={"/auth/user-type"}
+                                    href={"/"}
                                 >
                                     Login
                                 </Link>

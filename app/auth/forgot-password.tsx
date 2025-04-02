@@ -94,10 +94,7 @@ export default function ForgotPassword() {
 
                     <Text className="mt-6">
                         Remembered your password?{" "}
-                        <Link
-                            className="text-primary-100"
-                            href="/auth/user-type"
-                        >
+                        <Link className="text-primary-100" href="/">
                             Login Here
                         </Link>
                     </Text>

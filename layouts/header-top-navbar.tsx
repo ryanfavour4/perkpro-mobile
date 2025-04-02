@@ -172,7 +172,7 @@ export default function HeaderTopNavbar({ title }: props) {
                         <View
                             className={`border-red-500 border rounded-lg hover:opacity-50 bg-red-500`}
                         >
-                            <Link href={"/auth/user-type"}>
+                            <Link href={"/"}>
                                 <View className="py-3.5 px-3 w-full flex flex-row items-center gap-4">
                                     <AntDesign
                                         name="logout"
