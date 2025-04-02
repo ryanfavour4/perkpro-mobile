@@ -3,7 +3,7 @@ import { NavLink } from "@/layouts/top-navbar";
 export const menuLinks: NavLink[] = [
     {
         name: "Profile",
-        link: "/auth/kyc",
+        link: "/user/profile",
         iconLibrary: "Feather",
         iconName: "user",
         isActive: false,
