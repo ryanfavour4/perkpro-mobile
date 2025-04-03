@@ -18,11 +18,11 @@ export type NavLink = {
     link: any;
     iconName: any;
     iconLibrary:
-        | "Feather"
-        | "Ionicons"
-        | "AntDesign"
-        | "Fontisto"
-        | "MaterialCommunityIcons";
+    | "Feather"
+    | "Ionicons"
+    | "AntDesign"
+    | "Fontisto"
+    | "MaterialCommunityIcons";
     isActive: boolean;
 };
 
@@ -56,42 +56,45 @@ export default function TopNavbar() {
     return (
         <>
             <SafeAreaView
-                className={`${
-                    Platform.OS === "ios" ? "h-36" : "h-32"
-                } bg-light-100`}
+                className={`${Platform.OS === "ios" ? "h-36" : "h-32"
+                    } bg-light-100`}
             >
                 <View className="relative mt-auto bg-light-100 pb-6">
-                    <View className="px-4 pt-2 flex items-center justify-between flex-row container">
-                        <Image
-                            resizeMode="contain"
-                            className="rounded-full w-12 h-12"
-                            source={images.noUser}
-                            alt="Image"
-                        />
-
-                        <Link className="ml-14" href={"/"}>
+                    <View className="px-10 pt-2 items-center  flex-row container">
+                        <View style={{flex:1}}>
                             <Image
                                 resizeMode="contain"
-                                className="w-32 h-16"
-                                source={images.logo}
+                                className="rounded-full w-10 h-10"
+                                source={images.noUser}
+                                alt="Image"
                             />
-                        </Link>
+                        </View>
 
-                        <View className="flex flex-row items-center gap-5">
+                        <View style={{flex:2}}>
+                            <Link className="" href={"/"}>
+                                <Image
+                                    resizeMode="contain"
+                                    className="w-32 h-10"
+                                    source={images.logo}
+                                />
+                            </Link>
+                        </View>
+
+                        <View className="flex flex-row items-center gap-3" style={{flex:1}}>
                             <Link href={"/search/search"}>
                                 <Fontisto
                                     className="rounded-lg p-2"
                                     name="search"
-                                    size={24}
-                                    color={colors.text}
+                                    size={20}
+                                    color='#000000A6'
                                 />
                             </Link>
                             <Feather
                                 onPress={() => setIsMenuOpen(!isMenuOpen)}
                                 className="rounded-lg p-2"
                                 name="menu"
-                                size={30}
-                                color={colors.text}
+                                size={24}
+                                color='#000000A6'
                             />
                         </View>
                     </View>
@@ -102,10 +105,10 @@ export default function TopNavbar() {
                 ${Platform.OS === "ios" ? "py-16" : "py-5 mt-8"}
                 ${isMenuOpen ? "translate-x-0" : "translate-x-[100%]"}`}
             >
-                <View className="px-4 flex items-center justify-between flex-row">
+                <View className="px-6 flex items-center justify-between flex-row">
                     <Image
                         resizeMode="contain"
-                        className="rounded-full w-12 h-12"
+                        className="rounded-full w-8 h-8"
                         source={images.noUser}
                         alt="Image"
                     />
@@ -114,12 +117,12 @@ export default function TopNavbar() {
                         onPress={() => setIsMenuOpen(!isMenuOpen)}
                         className="rounded-lg p-2"
                         name="menu"
-                        size={30}
+                        size={24}
                         color={colors["light-100"]}
                     />
                 </View>
 
-                <View className="mt-10 container px-4 flex gap-5 flex-col">
+                <View className="mt-7 container px-4 flex gap-5 flex-col">
                     {navLink.map((link, index) => {
                         const IconComponent = iconMap[link.iconLibrary]; // Dynamically select the library
 
@@ -127,11 +130,10 @@ export default function TopNavbar() {
                             <View
                                 key={index}
                                 onTouchStart={() => navLinkHandler(link.name)}
-                                className={`border-light-100 border rounded-lg hover:opacity-50 ${
-                                    link.isActive
+                                className={`border-light-100 border rounded-lg hover:opacity-50 ${link.isActive
                                         ? "bg-light-100"
                                         : "bg-primary-100"
-                                }`}
+                                    }`}
                             >
                                 <Link href={link.link}>
                                     <View className="py-3.5 px-3 w-full flex flex-row items-center gap-4">
@@ -146,11 +148,10 @@ export default function TopNavbar() {
                                         />
 
                                         <Text
-                                            className={`text-lg ${
-                                                link.isActive
+                                            className={`text-lg ${link.isActive
                                                     ? "text-primary-100"
                                                     : "text-light-100"
-                                            }`}
+                                                }`}
                                         >
                                             {link.name}
                                         </Text>
@@ -160,7 +161,7 @@ export default function TopNavbar() {
                         );
                     })}
 
-                    <View className="mt-5 pt-6 border-light-100 border-t flex flex-col gap-4">
+                    <View className="flex flex-col gap-3">
                         <View
                             className={`border-green-500 border rounded-lg hover:opacity-50 bg-green-500`}
                         >

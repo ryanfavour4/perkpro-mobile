@@ -52,7 +52,7 @@ const ShortletSearchForm = () => {
                 <View className="w-full">
                     <Text className="text-base mb-1">Location</Text>
 
-                    <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+                    <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
                             placeholder={"Enter a state or locality or area"}
                             className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
@@ -84,10 +84,10 @@ const ShortletSearchForm = () => {
                             paddingHorizontal: 16,
                             borderRadius: 8,
                             borderWidth: 1,
-                            borderColor: "#ccc",
+                            borderColor: "#0415FEA3",
                         }}
                         dropDownContainerStyle={{
-                            borderColor: "#ccc",
+                            borderColor: "#0415FEA3",
                             backgroundColor: "white",
                             zIndex: 1000, // Ensure dropdown is above other elements
                             elevation: 5,
@@ -103,7 +103,7 @@ const ShortletSearchForm = () => {
                 <View className="w-full">
                     <Text className="text-base mb-1">Bedrooms</Text>
 
-                    <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+                    <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
                             placeholder={"Number of bedrooms"}
                             className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
@@ -123,7 +123,7 @@ const ShortletSearchForm = () => {
                 <View className="w-full">
                     <Text className="text-base mb-1">Minimum Price</Text>
 
-                    <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+                    <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
                             placeholder={"Minimum Price"}
                             className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
@@ -143,7 +143,7 @@ const ShortletSearchForm = () => {
                 <View className="w-full">
                     <Text className="text-base mb-1">Maximum Price</Text>
 
-                    <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+                    <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
                             placeholder={"Maximum Price"}
                             className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
@@ -177,6 +177,7 @@ const ShortletSearchForm = () => {
                                         )
                                     }
                                     checked={purposeOfRent.includes(purp.value)}
+                                    
                                 />
                                 <Text>{purp.label}</Text>
                             </View>

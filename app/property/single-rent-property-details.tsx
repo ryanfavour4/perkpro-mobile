@@ -20,8 +20,8 @@ export default function SingleRentPropertyDetailsScreen() {
                 <View className="pb-10">
                     {/* Hero */}
                     <View className="">
-                        <View className="mb-4 bg-primary-100/25 rounded-full self-start m-auto px-4 py-1.5">
-                            <Text className="text-sm text-center w-fit">
+                        <View className="mb-4 bg-primary-100/25 rounded-full self-start m-auto px-5 py-1.5">
+                            <Text className="text-sm text-center w-fit text-[#000000]">
                                 For Rent
                             </Text>
                         </View>
@@ -30,21 +30,21 @@ export default function SingleRentPropertyDetailsScreen() {
                             className="w-[100%] h-64 shadow border border-dark-50/25 rounded-xl"
                             source={images.listingHouse2}
                         />
-                        <View className="mt-8 flex flex-row justify-between">
+                        <View className="mt-8 flex flex-row justify-between mb-2">
                             <View>
-                                <Text className="text-3xl font-semibold mb-2">
-                                    4 Bedroom Duplex
+                                <Text className="text-3xl font-[600] mb-2">
+                                    4 Bedroom {`\n`}Duplex
                                 </Text>
                                 <Text className="">Lekki Ajah, Lagos</Text>
                             </View>
                             <View className="text-right">
-                                <Text className="text-right text-xl">
+                                <Text className="text-right text-[16px]">
                                     Price
                                 </Text>
-                                <Text className="my-1.5 text-right text-2xl font-semibold">
+                                <Text className="my-1.5 text-right text-2xl font-[600]">
                                     ₦150k
                                 </Text>
-                                <Text className="text-right">Per Night</Text>
+                                <Text className="text-right text-[12px]">Per Night</Text>
                             </View>
                         </View>
                         <View className="border-2 w-[60%] border-dark-50/25 rounded-full mb-4" />

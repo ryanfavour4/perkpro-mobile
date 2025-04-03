@@ -37,7 +37,7 @@ export default function HomeHouseCards({
     const router = useRouter();
 
     return (
-        <View className="border p-2 rounded-xl border-primary-100/25 w-56 mx-2">
+        <View className="p-2 rounded-xl  w-56 mx-2">
             <View className="relative">
                 <Image
                     className="rounded-lg h-36 w-full"
@@ -56,7 +56,7 @@ export default function HomeHouseCards({
                     <MaterialCommunityIcons
                         name="car-brake-parking"
                         size={24}
-                        colors={colors["dark-50"]}
+                        colors='#D9D9D9'
                     />
                     <MaterialCommunityIcons
                         name="tree-outline"
