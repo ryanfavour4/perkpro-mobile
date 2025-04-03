@@ -71,6 +71,14 @@ export default function RootLayout() {
                         options={{ headerShown: false }}
                     />
                     <Stack.Screen
+                        name="user/profile"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="user/kyc"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
                         name="chat/chat-list"
                         options={{ headerShown: false }}
                     />
