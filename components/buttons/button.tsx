@@ -42,6 +42,7 @@ export default function Button({
                 } 
                 ${disabled ? "opacity-50" : "active:opacity-75"} 
                 py-5 px-6 rounded-lg items-center justify-center flex-row ${className}
+
             `}
             disabled={disabled}
             {...rest}
