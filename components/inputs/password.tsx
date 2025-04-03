@@ -28,7 +28,7 @@ export default function PasswordInput({
 
     return (
         <View
-            className={`border border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3 ${className}`}
+            className={`border border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3 ${className}`}
         >
             <TextInput
                 placeholder={placeholder}

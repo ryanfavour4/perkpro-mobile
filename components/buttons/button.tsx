@@ -41,18 +41,15 @@ export default function Button({
                         : "border border-primary-100 bg-light-100"
                 } 
                 ${disabled ? "opacity-50" : "active:opacity-75"} 
-                py-4 px-6 rounded-lg items-center justify-center flex-row ${className}
+                py-5 px-6 rounded-lg items-center justify-center flex-row ${className}
+
             `}
             disabled={disabled}
             {...rest}
         >
             {isLoading ? (
                 <ActivityIndicator
-                    color={
-                        variant === "solid"
-                            ? colors["primary-100"]
-                            : colors["light-100"]
-                    }
+                    color='white'
                 />
             ) : (
                 <View className="flex flex-row items-center gap-2">

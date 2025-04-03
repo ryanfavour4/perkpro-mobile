@@ -1,7 +1,7 @@
 import HomeHouseCards from "@/components/home-house-cards";
 import { images } from "@/constants/images";
 import TopNavbar from "@/layouts/top-navbar";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
@@ -17,9 +17,9 @@ export default function HomeScreen() {
                 <View className="pb-10">
                     {/* Hero */}
                     <View className="">
-                        <Text className="text-xl font-bold mb-4">
+                        <Text className="text-lg mb-4 text-center">
                             Welcome,{" "}
-                            <Text className="text-primary-100">
+                            <Text className="text-[#0415FEA3] font-[700]">
                                 Francis Peace
                             </Text>
                         </Text>
@@ -169,12 +169,17 @@ export default function HomeScreen() {
 
                         <Pressable
                             onPress={() => router.push("/search/companies")}
-                            className="bg-dark-50 p-3 rounded-lg mt-5"
+                            className="bg-dark-50 p-3 rounded-lg mt-5 mx-4 mb-6"
                         >
-                            <Text className="text-light-100 text-center">
+                            <Text className="text-light-100 font-[600] text-center">
                                 Search For more Companies/Agents
                             </Text>
                         </Pressable>
+
+                        <View className="mx-3 flex-row gap-2 justify-center">
+                            <Text className="text-[#000000]">Nothing to see here again.</Text>
+                            <Link href='/property/single-rent-property-details' className="text-[#0415FE] font-[600]">View available properties</Link>
+                        </View>
                     </View>
                 </View>
             </ScrollView>

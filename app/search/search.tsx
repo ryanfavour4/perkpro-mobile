@@ -34,10 +34,10 @@ export default function PayProperty() {
                         </Text>
                     </View>
 
-                    <View className="border border-dark-50/25 px-3 py-3 rounded-md flex flex-col mt-10">
+                    <View className="px-3 py-3 rounded-md flex flex-col mt-2">
                         <View>
                             {/* Form Tabs */}
-                            <View className="border border-dark-50/25 rounded-md flex flex-row mb-6 items-center justify-between overflow-hidden">
+                            <View className="rounded-md flex flex-row mb-5 items-center justify-between overflow-hidden">
                                 {tabs.map((tab) => (
                                     <TouchableOpacity
                                         key={tab.name}
@@ -45,8 +45,9 @@ export default function PayProperty() {
                                         style={{
                                             paddingVertical: 10,
                                             paddingHorizontal: 20,
-                                            borderBottomWidth: 2,
-                                            borderBottomColor:
+                                            borderRadius:5,
+                                        
+                                            backgroundColor:
                                                 activeTab === tab.name
                                                     ? colors["primary-100"]
                                                     : "transparent",
@@ -60,8 +61,8 @@ export default function PayProperty() {
                                             style={{
                                                 color:
                                                     activeTab === tab.name
-                                                        ? "blue"
-                                                        : "gray",
+                                                        ? "white"
+                                                        : "black",
                                             }}
                                         >
                                             {tab.name}
