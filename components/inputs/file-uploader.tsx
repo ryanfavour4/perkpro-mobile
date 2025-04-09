@@ -68,7 +68,7 @@ const FileDropzone = ({
         <>
             <TouchableOpacity
                 onPress={camera ? openCamera : handleFilePick}
-                className={`${className} w-full items-center py-6 p-4 border border-gray-300 rounded-lg bg-gray-100 mb-2`}
+                className={`${className} w-full items-center py-6 p-4 border border-[#0415FE] border-dashed rounded-lg bg-[#0415FE1F] mb-2`}
             >
                 <TouchableOpacity className="items-center">
                     {icon ? icon : <Feather name="upload" size={30} />}

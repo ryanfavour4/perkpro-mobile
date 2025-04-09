@@ -18,8 +18,8 @@ export default function Schedules() {
                             className="size-56 rounded-lg"
                         />
 
-                        <Text className="text-center">
-                            You currently have no scheduled events
+                        <Text className="text-center text-lg" style={{marginTop:-20}}>
+                            You currently have no {`\n`} scheduled events
                         </Text>
                     </View>
                 </View>

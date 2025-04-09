@@ -1,62 +1,66 @@
 {
-    "expo": {
-        "name": "Perkpro",
-        "slug": "perkpro",
-        "version": "1.0.1",
-        "orientation": "portrait",
-        "icon": "./assets/images/app-icon.png",
-        "splash": {
-            "image": "./assets/images/app-icon.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
-        "scheme": "myapp",
-        "userInterfaceStyle": "automatic",
-        "newArchEnabled": true,
-        "ios": {
-            "supportsTablet": true,
-            "infoPlist": {
-                "NSAppTransportSecurity": {
-                    "NSAllowsArbitraryLoads": true
-                }
-            }
-        },
-        "android": {
-            "package": "pkg.perkpro.app",
-            "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
-            "versionCode": 1,
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/images/app-icon.png",
-                "backgroundColor": "#ffffff"
-            }
-        },
-        "web": {
-            "bundler": "metro",
-            "output": "static",
-            "favicon": "./assets/images/app-icon.png"
-        },
-        "plugins": [
-            "expo-router",
-            [
-                "expo-splash-screen",
-                {
-                    "image": "./assets/images/app-icon.png",
-                    "imageWidth": 350,
-                    "resizeMode": "contain",
-                    "backgroundColor": "#ffffff"
-                }
-            ]
-        ],
-        "experiments": {
-            "typedRoutes": true
-        },
-        "extra": {
-            "router": {
-                "origin": false
-            },
-            "eas": {
-                "projectId": "967e3526-8924-423b-ab48-350fc4739bbb"
-            }
+  "expo": {
+    "name": "Perkpro",
+    "slug": "perkpro",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/images/app-icon.png",
+    "splash": {
+      "image": "./assets/images/app-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
         }
+      }
+    },
+    "android": {
+      "package": "pkg.perkpro.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/app-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/app-icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/app-icon.png",
+          "imageWidth": 350,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "967e3526-8924-423b-ab48-350fc4739bbb"
+      }
     }
+  }
 }

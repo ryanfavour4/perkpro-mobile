@@ -9,10 +9,13 @@ import "./styles/globals.css";
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 import { persistor, store } from "@/redux/store";
-import Toast from "@/components/Toast";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { NotificationProvider } from "@/contexts/NotificationContext";
+
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+
 
 export default function RootLayout() {
     const [isReady, setIsReady] = useState(false);
@@ -25,6 +28,8 @@ export default function RootLayout() {
         "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
         "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
     });
+
+
 
     useEffect(() => {
         if (loaded) SplashScreen.hideAsync();
@@ -57,70 +62,81 @@ export default function RootLayout() {
         <>
             <ThemeProvider>
                 <Provider store={store}>
-                    <PersistGate loading={null} persistor={persistor}>
-                        <Stack>
+                    <PersistGate loading={null} persistor={persistor}>                       
+                        <AuthProvider>
+                        <NotificationProvider>
+                            <Stack>
                             <Stack.Screen
-                                name="(tabs)"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="auth"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="index"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="home/index"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="chat/chat-list"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="notifications/notifications"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="property/single-rent-property-details"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="property/single-sale-property-details"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="property/pay-property"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="schedules/schedules"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="search/search"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="search/companies"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="search/results"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen
-                                name="wishlist/wishlist"
-                                options={{ headerShown: false }}
-                            />
-                            <Stack.Screen name="+not-found" />
-                        </Stack>
+                                    name="index"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="auth"
+                                    options={{ headerShown: false, animation: 'slide_from_left' }}
+                                />
+                               
+                                  
+                                <Stack.Screen
+                                    name="user"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="home/index"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="chat/chat-list"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="notifications/notifications"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="property/single-rent-property-details"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="property/single-sale-property-details"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="property/pay-property"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="schedules/schedules"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen
+                                    name="search/search"
+                                    options={{ headerShown: false, animation: 'slide_from_left' }}
+                                />
+                                <Stack.Screen
+                                    name="search/companies"
+                                    options={{ headerShown: false, animation: 'slide_from_left' }}
+                                />
+                                <Stack.Screen
+                                    name="search/results"
+                                    options={{ headerShown: false, animation: 'slide_from_left' }}
+                                />
+                                <Stack.Screen
+                                    name="wishlist/wishlist"
+                                    options={{ headerShown: false, animation: 'slide_from_bottom' }}
+
+                                />
+                                 <Stack.Screen
+                                    name="agent"
+                                    options={{ headerShown: false }}
+                                />
+                                <Stack.Screen name="+not-found" />
+                            </Stack>
+                            </NotificationProvider>
+                        </AuthProvider>
+
                     </PersistGate>
                 </Provider>
             </ThemeProvider>
-            <Toast/>
         </>
     );
 }

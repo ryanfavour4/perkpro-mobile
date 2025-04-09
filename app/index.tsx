@@ -12,7 +12,7 @@ export default function UserType() {
     return (
         <SafeAreaView className="flex-1 bg-white">
             <View className="px-5">
-                <View className="flex flex-col gap-10 items-center h-full pt-36">
+                <View className="flex flex-col gap-3 items-center h-full pt-36">
                     <Image
                         resizeMode="contain"
                         className="w-24 h-24"

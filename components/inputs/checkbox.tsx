@@ -22,23 +22,24 @@ const Checkbox = ({
                 flexDirection: "row",
                 alignItems: "center",
                 gap: 8,
-                borderRadius: 8,
+                borderRadius: 4,
                 borderWidth: 2,
-                borderColor: checked ? colors["primary-200"] : "#ccc",
+                borderColor: checked ? colors["primary-200"] : "#0415FEA3",
             }}
         >
             <View
                 style={{
-                    width: 24,
-                    height: 24,
+                    width: 15,
+                    height: 15,
                     justifyContent: "center",
                     alignItems: "center",
+                    flexDirection:'row'
                 }}
             >
                 {checked && (
                     <Ionicons
                         name="checkmark"
-                        size={20}
+                        size={14}
                         color={colors["primary-100"]}
                     />
                 )}

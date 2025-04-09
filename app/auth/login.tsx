@@ -9,71 +9,91 @@ import {
 import React, { useEffect, useState } from "react";
 import { images } from "@/constants/images";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
-import { Link, useRouter } from "expo-router";
+import { Link, Redirect, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTheme } from "@/contexts/theme";
 import PasswordInput from "@/components/inputs/password";
 import Button from "@/components/buttons/button";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAsync } from "@/redux/slices/authSlice";
+import { clearAuthLog, loginAsync } from "@/redux/slices/authSlice";
+import Toast from "@/components/Toast";
+import { useFormik } from 'formik'
+import loginValidationSchema from "@/schema/loginValidationSchema";
 
 export default function Login() {
     const router = useRouter();
     const { colors } = useTheme();
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [emailError, setEmailError] = useState<string>('')
-    const [passwordError, setPasswordError] = useState<string>('')
+    const [showToast, setShowToast] = useState(false)
 
-    const { loading, errorMessage, error } = useSelector(state => state.auth)
+    const { values, handleChange, handleSubmit, errors, touched } = useFormik({
+        initialValues: {
+            email: '',
+            password: ''
+        },
+        validationSchema: loginValidationSchema,
+        onSubmit: (values) => {
+            console.log('Form submitted with values:', values);
+            dispatch(loginAsync({ email: values.email, password: values.password }))
+
+
+        }
+    })
+
+    const { loading, errorMessage, error, isAuthenticated, message } = useSelector((state: { auth: { loading: boolean, errorMessage: string, error: boolean, isAuthenticated: boolean, message: string } }) => state.auth)
     const dispatch = useDispatch()
+    console.log('isAuth', isAuthenticated);
 
+
+    // useEffect(() => {
+    //     const checkAuth = () => {
+    //         if (isAuthenticated) {
+    //             if (message === '') {
+    //                 router.replace('/home')
+    //             }
+    //             else {
+    //                 setShowToast(true);
+    //                 const timer = setTimeout(() => {
+    //                     dispatch(clearAuthLog());
+    //                     router.replace('/home')
+    //                 }, 2000)
+    //                 return () => clearTimeout(timer)
+    //             }
+
+    //         }
+    //     }
+    //     checkAuth()
+    // }, [isAuthenticated])
+
+
+    useEffect(() => {
+        if (error) {
+            setShowToast(true);
+            setTimeout(() => {
+                dispatch(clearAuthLog());
+            }, 2000)
+        }
+    }, [error]);
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    useEffect(()=>{
-       if(error && errorMessage !== ''){
-        
-       }
-    },[error, errorMessage])
-
-
-    useEffect(() => {
-        if (email.length === 0) {
-            setEmailError('Email field is required')
-        }
-        else {
-            if (!emailRegex.test(email) && email.length > 0) {
-                setEmailError('Please enter the correct email address')
-            }
-            else {
-                setEmailError('')
-
-            }
-
-        }
-    }, [email])
-
-    useEffect(() => {
-        if (password.length === 0) {
-            setPasswordError('Password field is required')
-        }
-        else {
-            setPasswordError('')
-        }
-    }, [password])
-
-
-    const handleSubmit = async () => {
-        if (emailError === '' && passwordError === '') {
-           dispatch(loginAsync({email, password}))
-        }
-    }
 
     return (
         <SafeAreaView className="flex-1 bg-white">
-            <ScrollView className="px-5">
-                <View className="flex flex-col gap-5 items-center h-full pt-4">
+            {showToast && error && <Toast
+                message={errorMessage}
+                status="Error"
+                onClose={() => {
+                    setShowToast(false);
+                }} />}
+
+            {showToast && message !== '' && isAuthenticated && <Toast
+                message={message}
+                status="Success"
+                onClose={() => {
+                    setShowToast(false);
+                }} />}
+            <ScrollView className="px-10">
+                <View className="flex flex-col gap-1 items-center h-full mt-10">
                     <TouchableOpacity onPress={() => router.push("/home")}>
                         <Image
                             resizeMode="contain"
@@ -82,55 +102,49 @@ export default function Login() {
                         />
                     </TouchableOpacity>
 
-                    <Text className="text-2xl font-bold">Login</Text>
+                    <Text className="text-2xl font-[600]">Login</Text>
 
-                    <View className="w-full mt-5 flex flex-col gap-5">
+                    <View className="w-full mt-4 flex flex-col gap-5">
                         <View className="">
                             <View className="mb-4 w-full">
-                                <Text className="text-base mb-1 text-dark-100">
+                                {/* <Text className="text-base mb-1 text-dark-100">
                                     Email{" "}
-                                </Text>
+                                </Text> */}
 
                                 <View className="border border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                                     <TextInput
                                         placeholder={"Email address"}
                                         className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
-                                        value={email}
+                                        value={values.email}
                                         keyboardType="email-address"
-                                        onChangeText={(text) => {
-                                            setEmail(text)
-                                        }}
-                                        secureTextEntry={false}
+                                        onChangeText={handleChange('email')}
                                     />
                                     <Ionicons
                                         name="mail-outline"
-                                        size={24}
+                                        size={20}
                                         color={colors.text}
                                     />
                                 </View>
-                                {emailError !== '' && <Text className="text-red-400 mt-2 font-medium">{emailError}</Text>}
+                                {touched.email && errors.email && <Text className="text-red-400 mt-2 font-medium">{errors.email}</Text>}
                             </View>
                             <View className="w-full">
-                                <Text className="text-base mb-1 text-dark-100">
+                                {/* <Text className="text-base mb-1 text-dark-100">
                                     Password
-                                </Text>
+                                </Text> */}
 
                                 <PasswordInput
                                     placeholder={"Password"}
-                                    value={password}
-                                    onChangeText={(text) => {
-                                        setPassword(text)
-
-                                    }}
+                                    value={values.password}
+                                    onChangeText={handleChange('password')}
                                     secureTextEntry={false}
 
                                 />
-                                {passwordError !== '' && <Text className="text-red-400 mt-2 font-medium">{passwordError}</Text>}
+                                {touched.password && errors.password && <Text className="text-red-400 mt-2 font-medium">{errors.password}</Text>}
                             </View>
-                            <Button title="Login" className="mt-8" onPress={handleSubmit} isLoading={loading} />
+                            <Button title="Login" className="mt-4" onPress={handleSubmit} isLoading={loading} />
                         </View>
                         {/* -- */}
-                        <Text className="mb-2">
+                        <Text>
                             Forgot Password?{" "}
                             <Link
                                 className="text-primary-100 font-[600]"
@@ -141,12 +155,12 @@ export default function Login() {
                         </Text>
 
                         {/* -- */}
-                        <View className="mt-1">
+                        <View>
                             <Text className="mb-1">
                                 Don't have an account with us yet?
                             </Text>
                             <Link
-                                className="text-primary-100"
+                                className="text-primary-100 font-[500]"
                                 href={"/auth/register"}
                             >
                                 Register Here
@@ -159,12 +173,13 @@ export default function Login() {
                                     <View className="mr-2">
                                         <AntDesign
                                             name="customerservice"
-                                            className="bg-light-100 w-[60px] h-[60px] rounded-full flex items-center justify-center text-center flex-col pt-5 border border-primary-100"
+                                            className="bg-light-100 w-[60px] h-[60px] rounded-full flex items-center justify-center text-center flex-col pt-5"
                                             size={24}
                                             color={colors["primary-100"]}
+                                            style={{ elevation: 1 }}
                                         />
                                     </View>
-                                    <Text className="text-lg text-center">
+                                    <Text className="text-[15px] text-center font-[400]">
                                         Customer Support
                                     </Text>
                                 </View>

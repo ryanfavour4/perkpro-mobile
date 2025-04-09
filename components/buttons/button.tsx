@@ -50,6 +50,7 @@ export default function Button({
             {isLoading ? (
                 <ActivityIndicator
                     color='white'
+                    size={17}
                 />
             ) : (
                 <View className="flex flex-row items-center gap-2">

@@ -10,10 +10,11 @@ const HouseSearchResultCard = () => {
             onPress={() =>
                 router.push("/property/single-sale-property-details")
             }
-            className="border border-primary-100/25 p-4 rounded-lg flex flex-row justify-between"
+            className="bg-light-100 p-4 rounded-lg flex flex-row justify-between"
+            style={{elevation:1}}
         >
             <View className="flex flex-col gap-2 flex-wrap text-wrap w-[60%]">
-                <Text className="text-2xl font-semibold flex-wrap text-wrap w-fit self-start">
+                <Text className="text-lg font-semibold flex-wrap text-wrap w-fit self-start">
                     2 Bedroom Bungalow
                 </Text>
                 <Text className="">Obalende, Lagos</Text>
@@ -23,7 +24,7 @@ const HouseSearchResultCard = () => {
                 <Image
                     source={images.listingHouse1}
                     resizeMode="cover"
-                    className="size-32 rounded-lg"
+                    className="w-32 h-24 rounded-lg"
                 />
             </View>
         </TouchableOpacity>

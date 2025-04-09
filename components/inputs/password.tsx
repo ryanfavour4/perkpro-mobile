@@ -41,7 +41,7 @@ export default function PasswordInput({
             <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
                 <Ionicons
                     name={showPassword ? "eye-outline" : "eye-off-outline"}
-                    size={24}
+                    size={20}
                     color={colors.text}
                 />
             </TouchableOpacity>
