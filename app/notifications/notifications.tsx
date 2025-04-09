@@ -15,15 +15,15 @@ const Notifications = () => {
             <StatusBar style="dark" />
             <HeaderTopNavbar title="Notification" />
             <ScrollView className="px-4 bg-light-100">
-                <View className="mt-10 flex-col flex gap-4">
+                <View className="mt-5 flex-col flex gap-4">
                     {/*  */}
-                    <View className="flex overflow-hidden rounded-lg flex-row border-primary-100/25 border-2 px-2 py-2 gap-5">
+                    <View className="flex overflow-hidden rounded-lg flex-row px-2 py-2 gap-5 bg-light-100" style={{ elevation: 1 }}>
                         <View className="bg-primary-100 py-6 self-start px-3 w-[20%] rounded-md flex items-center justify-center">
                             <Image
                                 resizeMode="contain"
-                                className="w-10 h-10"
                                 source={images.notificationBellIcon}
                                 alt="Image"
+                                style={{ width: 40, height: 30 }}
                             />
                         </View>
                         <View className="border-blue-600 w-[75%]">
@@ -38,7 +38,7 @@ const Notifications = () => {
                                 </Link>
                             </Text>
 
-                            <View className="flex flex-row gap-2 items-center mt-4 justify-end">
+                            <View className="flex flex-row gap-2 items-center mt-2 justify-end">
                                 <Ionicons
                                     name="time-outline"
                                     size={16}
@@ -49,13 +49,14 @@ const Notifications = () => {
                         </View>
                     </View>
                     {/*  */}
-                    <View className="flex overflow-hidden rounded-lg flex-row border-primary-100/25 border-2 px-2 py-2 gap-5">
+                    <View className="flex overflow-hidden rounded-lg flex-row bg-light-100 px-2 py-2 gap-5" style={{ elevation: 1 }}>
                         <View className="bg-dark-50 py-6 self-start px-3 w-[20%] rounded-md flex items-center justify-center">
                             <Image
                                 resizeMode="contain"
-                                className="w-10 h-10"
                                 source={images.chatBubbleIcon}
                                 alt="Image"
+                                style={{ width: 40, height: 30 }}
+
                             />
                         </View>
                         <View className="border-blue-600 w-[75%]">
@@ -69,7 +70,7 @@ const Notifications = () => {
                                 </Link>
                             </Text>
 
-                            <View className="flex flex-row gap-2 items-center mt-4 justify-end">
+                            <View className="flex flex-row gap-2 items-center mt-2 justify-end">
                                 <Ionicons
                                     name="time-outline"
                                     size={16}
@@ -80,13 +81,14 @@ const Notifications = () => {
                         </View>
                     </View>
                     {/*  */}
-                    <View className="flex overflow-hidden rounded-lg flex-row border-primary-100/25 border-2 px-2 py-2 gap-5">
+                    <View className="flex overflow-hidden rounded-lg flex-row bg-light-100 px-2 py-2 gap-5" style={{ elevation: 1 }}>
                         <View className="bg-green-500 py-6 self-start px-3 w-[20%] rounded-md flex items-center justify-center">
                             <Image
                                 resizeMode="contain"
-                                className="w-10 h-10"
                                 source={images.bankPillarsDarkIcon}
                                 alt="Image"
+                                style={{ width: 40, height: 30 }}
+
                             />
                         </View>
                         <View className="border-blue-600 w-[75%]">
@@ -101,7 +103,7 @@ const Notifications = () => {
                                 </Link>
                             </Text>
 
-                            <View className="flex flex-row gap-2 items-center mt-4 justify-end">
+                            <View className="flex flex-row gap-2 items-center mt-2 justify-end">
                                 <Ionicons
                                     name="time-outline"
                                     size={16}

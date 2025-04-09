@@ -14,9 +14,9 @@ const ChatList = () => {
             <StatusBar style="dark" />
             <HeaderTopNavbar title="Manage Chats" />
             <ScrollView className="px-4 bg-light-100">
-                <View className="mt-10 flex-col flex gap-4">
+                <View className="mt-5 flex-col flex gap-4">
                     {/*  */}
-                    <View className="flex overflow-hidden rounded-lg flex-row border-primary-100/25 border-2 px-2 py-2 gap-5">
+                    <View className="flex overflow-hidden rounded-lg flex-row bg-light-100 px-2 py-2 gap-5" style={{elevation:1}}>
                         <View className="bg-primary-100 py-4 aspect-square self-start px-2 w-[15%] rounded-full flex items-center justify-center">
                             <Image
                                 resizeMode="contain"
@@ -48,7 +48,7 @@ const ChatList = () => {
                     </View>
 
                     {/*  */}
-                    <View className="flex overflow-hidden rounded-lg flex-row border-primary-100/25 border-2 px-2 py-2 gap-5">
+                    <View className="flex overflow-hidden rounded-lg flex-row bg-light-100 px-2 py-2 gap-5" style={{elevation:1}}>
                         <View className="bg-primary-100 py-4 aspect-square self-start px-2 w-[15%] rounded-full flex items-center justify-center">
                             <Image
                                 resizeMode="contain"

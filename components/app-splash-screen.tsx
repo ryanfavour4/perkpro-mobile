@@ -2,6 +2,8 @@ import { images } from "@/constants/images";
 import { useTheme } from "@/contexts/theme";
 import { useEffect, useState } from "react";
 import { View, Text, Image, ActivityIndicator, StyleSheet } from "react-native";
+import { Video, ResizeMode } from 'expo-av'
+import loaderVideo from '../assets/images/loader.mp4'
 
 export default function AppSplashScreen({
     onFinish,
@@ -28,7 +30,18 @@ export default function AppSplashScreen({
                     source={images.logo}
                 />
                 {loading && (
-                    <ActivityIndicator size="large" color={colors.primary} />
+                    // <ActivityIndicator size="large" color={colors.primary} />
+                    <View className='flex-row justify-center'>
+                        <Video
+                            source={loaderVideo}
+                            resizeMode={ResizeMode.CONTAIN}
+                            shouldPlay
+                            isLooping
+                            isMuted
+                            className="rounded-lg"
+                            style={{ width: 50, height: 50 }} // Add dimensions
+                        />
+                    </View>
                 )}
             </View>
         </View>

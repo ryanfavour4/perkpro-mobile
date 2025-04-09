@@ -30,7 +30,7 @@ const LandSearchForm = () => {
             <View className="container flex flex-col gap-4">
                 {/*  */}
                 <View className="w-full">
-                    <Text className="text-base mb-1">Location</Text>
+                    {/* <Text className="text-base mb-1">Location</Text> */}
 
                     <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
@@ -49,7 +49,7 @@ const LandSearchForm = () => {
 
                 {/* Type */}
                 <View className="w-full z-50">
-                    <Text className="text-base mb-1">Type</Text>
+                    {/* <Text className="text-base mb-1">Type</Text> */}
                     <DropDownPicker
                         open={open}
                         setOpen={setOpen}
@@ -75,7 +75,7 @@ const LandSearchForm = () => {
 
                 {/*  */}
                 <View className="w-full">
-                    <Text className="text-base mb-1">Bedrooms</Text>
+                    {/* <Text className="text-base mb-1">Bedrooms</Text> */}
 
                     <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
@@ -95,7 +95,7 @@ const LandSearchForm = () => {
 
                 {/*  */}
                 <View className="w-full">
-                    <Text className="text-base mb-1">Minimum Price</Text>
+                    {/* <Text className="text-base mb-1">Minimum Price</Text> */}
 
                     <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
@@ -115,7 +115,7 @@ const LandSearchForm = () => {
 
                 {/*  */}
                 <View className="w-full">
-                    <Text className="text-base mb-1">Maximum Price</Text>
+                    {/* <Text className="text-base mb-1">Maximum Price</Text> */}
 
                     <View className="border bg-white border-[#0415FEA3] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                         <TextInput
@@ -133,7 +133,7 @@ const LandSearchForm = () => {
                     </View>
                 </View>
 
-                <Button title="Search" className="mt-8" />
+                <Button title="Search" className="mt-4" />
             </View>
         </View>
     );

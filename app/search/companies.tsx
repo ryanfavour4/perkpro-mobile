@@ -1,74 +1,56 @@
-import Button from "@/components/buttons/button";
-import { images } from "@/constants/images";
-import { useTheme } from "@/contexts/theme";
-import HeaderTopNavbar from "@/layouts/header-top-navbar";
-import TopNavbar from "@/layouts/top-navbar";
-import { AntDesign } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { View, Text, Image, TextInput, ScrollView, Dimensions, SafeAreaView } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { AntDesign } from "@expo/vector-icons";
 import { useState } from "react";
-import {
-    ScrollView,
-    View,
-    Text,
-    Image,
-    Pressable,
-    TextInput,
-} from "react-native";
+import { images } from "@/constants/images";
+import HeaderTopNavbar from "@/layouts/header-top-navbar";
+
+const { width } = Dimensions.get("window");
+const gap = 12; // Adjust gap size as needed
+const itemSize = (width - gap * 4) / 3;
 
 export default function SearchCompanies() {
-    const { colors } = useTheme();
     const [search, setSearch] = useState("");
-    const router = useRouter();
 
     return (
-        <>
+        <SafeAreaView className="flex-1 bg-white">
             <StatusBar style="dark" />
             <HeaderTopNavbar title="Search Companies" />
-            <ScrollView className="px-4 bg-light-100">
-                <View className="pb-10">
-                    {/* Section 1 */}
-                    <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3 mb-6">
-                        <TextInput
-                            placeholder={"Find real estate companies"}
-                            className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
-                            value={search}
-                            onChangeText={setSearch}
-                        />
-                        <AntDesign name="search1" size={24} color="black" />
-                    </View>
 
-                    <View>
-                        <Text className="text-xl font-semibold mb-6">
-                            Featured Companies:
-                        </Text>
-
-                        <View className="border-t border-dark-50/25 flex-wrap justify-between py-6 flex flex-row gap-4">
-                            <View className="h-32 w-32 bg-light-100 shadow p-3 rounded-lg border overflow-hidden border-dark-50/25 flex flex-col items-center justify-center">
-                                <Image
-                                    className="h-24 w-24 aspect-square"
-                                    resizeMode="contain"
-                                    source={images.pwanLogo}
-                                />
-                            </View>
-                            <View className="h-32 w-32 bg-light-100 shadow p-3 rounded-lg border overflow-hidden border-dark-50/25 flex flex-col items-center justify-center">
-                                <Image
-                                    className="h-24 w-24 aspect-square"
-                                    resizeMode="contain"
-                                    source={images.landweyLogo}
-                                />
-                            </View>
-                            <View className="h-32 w-32 bg-light-100 shadow p-3 rounded-lg border overflow-hidden border-dark-50/25 flex flex-col items-center justify-center">
-                                <Image
-                                    className="h-24 w-24 aspect-square"
-                                    resizeMode="contain"
-                                    source={images.sweetcoysLogo}
-                                />
-                            </View>
-                        </View>
-                    </View>
+            {/* Search Input Section */}
+            <View className="px-4 bg-light-100">
+                <View className="border bg-[#0415FE1F] border-[#0415FE1F] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3 mb-4">
+                    <TextInput
+                        placeholder="Find real estate companies"
+                        className="py-4 text-base flex-1 border-none outline-none"
+                        value={search}
+                        onChangeText={setSearch}
+                    />
+                    <AntDesign name="search1" size={20} color="#000000A6" />
                 </View>
-            </ScrollView>
-        </>
+            </View>
+
+            {/* Scrollable Content */}
+            <View className="flex-1">
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{ paddingBottom: 40, paddingHorizontal: 16 }}
+                >
+                    <Text className="text-lg font-[400] mb-4">Featured Companies:</Text>
+                    <View className="flex flex-wrap flex-row justify-between">
+                        {[images.pwanLogo, images.landweyLogo, images.sweetcoysLogo, images.pwanLogo, images.landweyLogo, images.sweetcoysLogo, images.sweetcoysLogo, images.pwanLogo, images.landweyLogo, images.sweetcoysLogo, images.pwanLogo, images.landweyLogo, images.sweetcoysLogo, images.sweetcoysLogo].map((logo, index) => (
+                            <View
+                                key={index}
+                                style={{ width: itemSize, marginBottom: gap }}
+                            >
+                                <View className="h-32 bg-light-100 shadow p-3 rounded-lg border overflow-hidden border-dark-50/25 flex flex-col items-center justify-center">
+                                    <Image className="h-24 w-24 aspect-square" resizeMode="contain" source={logo} />
+                                </View>
+                            </View>
+                        ))}
+                    </View>
+                </ScrollView>
+            </View>
+        </SafeAreaView>
     );
 }

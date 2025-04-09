@@ -1,4 +1,4 @@
-import { Image, Platform, ScrollView, Text, View } from "react-native";
+import { Image, Platform, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { images } from "@/constants/images";
 import {
@@ -9,9 +9,10 @@ import {
     MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { useTheme } from "@/contexts/theme";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { menuLinks } from "@/constants/menu";
+import { StatusBar } from "expo-status-bar";
 
 export type NavLink = {
     name: string;
@@ -40,7 +41,7 @@ export default function TopNavbar() {
     const [navLink, setNavLink] = useState<NavLink[]>(menuLinks);
 
     const navLinkHandler = (link: string) => {
-        console.log(link);
+        console.log('link', link);
         // set active navlink
         setNavLink((prev) => {
             return prev.map((navLink) => {
@@ -51,17 +52,19 @@ export default function TopNavbar() {
                 }
             });
         });
+        router.push(link); // Navigate to the link
+        setIsMenuOpen(false); // Close the menu after navigation
     };
 
     return (
         <>
             <SafeAreaView
-                className={`${Platform.OS === "ios" ? "h-36" : "h-32"
+                className={`${Platform.OS === "ios" ? "h-auto" : "h-auto"
                     } bg-light-100`}
             >
-                <View className="relative mt-auto bg-light-100 pb-6">
+                <View className="relative mt-10  bg-light-100 pb-6">
                     <View className="px-10 pt-2 items-center  flex-row container">
-                        <View style={{flex:1}}>
+                        <View style={{ flex: 1 }}>
                             <Image
                                 resizeMode="contain"
                                 className="rounded-full w-10 h-10"
@@ -70,7 +73,7 @@ export default function TopNavbar() {
                             />
                         </View>
 
-                        <View style={{flex:2}}>
+                        <View style={{ flex: 2 }}>
                             <Link className="" href={"/"}>
                                 <Image
                                     resizeMode="contain"
@@ -80,7 +83,7 @@ export default function TopNavbar() {
                             </Link>
                         </View>
 
-                        <View className="flex flex-row items-center gap-3" style={{flex:1}}>
+                        <View className="flex flex-row items-center gap-3" style={{ flex: 1 }}>
                             <Link href={"/search/search"}>
                                 <Fontisto
                                     className="rounded-lg p-2"
@@ -127,15 +130,15 @@ export default function TopNavbar() {
                         const IconComponent = iconMap[link.iconLibrary]; // Dynamically select the library
 
                         return (
-                            <View
+                            <TouchableOpacity
                                 key={index}
-                                onTouchStart={() => navLinkHandler(link.name)}
+                                onPress={() => navLinkHandler(link.link)}
                                 className={`border-light-100 border rounded-lg hover:opacity-50 ${link.isActive
-                                        ? "bg-light-100"
-                                        : "bg-primary-100"
+                                    ? "bg-light-100"
+                                    : "bg-primary-100"
                                     }`}
                             >
-                                <Link href={link.link}>
+                                <View>
                                     <View className="py-3.5 px-3 w-full flex flex-row items-center gap-4">
                                         <IconComponent
                                             name={link.iconName}
@@ -149,15 +152,15 @@ export default function TopNavbar() {
 
                                         <Text
                                             className={`text-lg ${link.isActive
-                                                    ? "text-primary-100"
-                                                    : "text-light-100"
+                                                ? "text-primary-100"
+                                                : "text-light-100"
                                                 }`}
                                         >
                                             {link.name}
                                         </Text>
                                     </View>
-                                </Link>
-                            </View>
+                                </View>
+                            </TouchableOpacity>
                         );
                     })}
 

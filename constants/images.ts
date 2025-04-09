@@ -17,6 +17,16 @@ import listingHouse1 from "@/assets/images/listing-house-1.jpg";
 import listingHouse2 from "@/assets/images/listing-house-2.png";
 import nothingFoundGif from "@/assets/images/nothing-found.gif";
 import emptyBoxGif from "@/assets/images/empty-box-web.gif";
+import loaderGif from '@/assets/images/loader.png'
+import houseIcon from '@/assets/images/house.png'
+import chatIcon from '@/assets/images/chat.png'
+import newIcon from '@/assets/images/new.png'
+import searchPropertyIcon from '@/assets/images/search.png'
+import plusIcon from '@/assets/images/plus.png'
+import editIcon from '@/assets/images/edit-icon.png'
+import shareIcon from '@/assets/images/share-icon.png'
+import trashIcon from '@/assets/images/trash-icon.png'
+import copyIcon from '@/assets/images/copy-icon.png'
 
 export const images = {
     logo,
@@ -38,4 +48,14 @@ export const images = {
     listingHouse2,
     nothingFoundGif,
     emptyBoxGif,
+    loaderGif,
+    houseIcon,
+    chatIcon,
+    newIcon,
+    searchPropertyIcon,
+    plusIcon,
+    editIcon,
+    shareIcon,
+    trashIcon,
+    copyIcon
 };

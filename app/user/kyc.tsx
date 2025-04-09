@@ -31,17 +31,16 @@ const Kyc = () => {
                 <View className="pb-10">
                     {/* Section 1 */}
                     <View>
-                        <Text className="text-xl font-semibold mb-2 text-center">
-                            Complete your KYC
+                        <Text className="text-lg font-semibold mb-2 text-center">
+                            Help complete your <Text className="text-[#0414FE]">KYC</Text>
                         </Text>
                     </View>
 
-                    <View className="border border-dark-50/25 px-3 py-3 rounded-md flex flex-col gap-4 mt-10">
+                    <View className="px-3 py-3 rounded-md flex flex-col gap-4 mt-2">
                         {/*  */}
                         <View className="w-full">
-                            <Text className="text-base mb-1">NIN NO.</Text>
 
-                            <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+                            <View className="border bg-white border-[#0415FE] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                                 <TextInput
                                     placeholder={"NIN Number"}
                                     className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
@@ -53,9 +52,7 @@ const Kyc = () => {
 
                         {/*  */}
                         <View className="w-full">
-                            <Text className="text-base mb-1">
-                                Upload NIN/ID
-                            </Text>
+
 
                             <FileDropzone
                                 onFileSelected={handleFileUpload}
@@ -72,9 +69,8 @@ const Kyc = () => {
 
                         {/*  */}
                         <View className="w-full">
-                            <Text className="text-base mb-1">BVN NO.</Text>
 
-                            <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+                            <View className="border bg-white border-[#0415FE] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                                 <TextInput
                                     placeholder={"BVN Number"}
                                     className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
@@ -86,11 +82,9 @@ const Kyc = () => {
 
                         {/*  */}
                         <View className="w-full">
-                            <Text className="text-base mb-1">
-                                Contact Address
-                            </Text>
 
-                            <View className="border bg-white border-gray-300 rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
+
+                            <View className="border bg-white border-[#0415FE] rounded-lg w-full px-4 flex flex-row items-center justify-between gap-3">
                                 <TextInput
                                     placeholder={"Contact Address"}
                                     className="py-4 text-base focus:border-none focus:outline-none rounded-lg flex-1 border-none outline-none"
@@ -102,7 +96,6 @@ const Kyc = () => {
 
                         {/*  */}
                         <View className="w-full">
-                            <Text className="text-base mb-1">Utility Bill</Text>
 
                             <FileDropzone
                                 onFileSelected={handleFileUpload}
@@ -119,7 +112,6 @@ const Kyc = () => {
 
                         {/*  */}
                         <View className="w-full">
-                            <Text className="text-base mb-1">Take Selfie</Text>
 
                             <FileDropzone
                                 onFileSelected={handleFileUpload}
